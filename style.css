@@ -1,0 +1,315 @@
+@import url("https://fonts.cdnfonts.com/css/made-goodtime-script");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+}
+
+#logo {
+  width: 100vw;
+  background-color: #ebb1a3;
+  margin: auto;
+  padding: 25px 0;
+}
+
+h1 {
+  color: #6b514a;
+  padding: 30px;
+  margin: 30px 150px;
+  font-size: 45px;
+  font-family: "Roboto Flex";
+}
+
+h3 {
+  color: #ebb1a3;
+  text-shadow: 1px 1px white, -1px -1px #444;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 30px;
+}
+.logo-image {
+  width: 250px;
+  display: block;
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+.agendamento {
+  margin-top: 20px;
+  color: #6b514a;
+  border: 1px solid #6b514a;
+  background-color: #ebb1a3;
+  border-radius: 25px;
+  width: 250px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  -webkit-animation: pulse 1s ease infinite;
+  -moz-animation: pulse 1s ease infinite;
+  -ms-animation: pulse 1s ease infinite;
+  -o-animation: pulse 1s ease infinite;
+  animation: pulse 1s ease infinite;
+}
+.box-pulse {
+  width: 100%;
+  width: 250px;
+  margin: 0 auto;
+}
+.box-pulse a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1);
+  }
+  25% {
+    -moz-transform: scale(1.1);
+  }
+  50% {
+    -moz-transform: scale(1);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@-ms-keyframes pulse {
+  0% {
+    -ms-transform: scale(1);
+  }
+  25% {
+    -ms-transform: scale(1.1);
+  }
+  50% {
+    -ms-transform: scale(1);
+  }
+  100% {
+    -ms-transform: scale(1);
+  }
+}
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1);
+  }
+  25% {
+    -o-transform: scale(1.1);
+  }
+  50% {
+    -o-transform: scale(1);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.div-pai {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.div-filho1,
+.div-filho2,
+.div-filho3 {
+  flex: 1;
+  cursor: pointer;
+}
+.div-filho1:hover {
+  opacity: 0.8;
+}
+.div-filho1:active {
+  opacity: 0.6;
+}
+
+.div-filho2:hover {
+  opacity: 0.8;
+}
+.div-filho2:active {
+  opacity: 0.6;
+}
+
+.div-filho3:hover {
+  opacity: 0.8;
+}
+.div-filho3:active {
+  opacity: 0.6;
+}
+
+.image-limpeza-de-pele,
+.image-sobrancelha,
+.image-cilios {
+  width: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #ebb1a3;
+}
+
+.info-cilios,
+.info-limpeza,
+.info-sobrancelha {
+  max-width: 260px;
+  padding: 25px;
+  margin: 20px;
+  color: #6b514a;
+  border: 4px dotted #ebb1a3;
+  background-color: #ffe5dfc0;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+footer {
+  width: 100vw;
+  color: #ebb1a3;
+  text-align: center;
+  font-size: 20px;
+  bottom: 0;
+}
+#social-links ion-icon {
+  color: #ebb1a3;
+  width: 40px;
+  height: 50px;
+  padding: 20px;
+  margin-top: 25px;
+  bottom: 0;
+}
+#end {
+  position: relative;
+  bottom: 0;
+  top: 7vh;
+}
+
+.content {
+  display: none;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+  #logo {
+    width: 100%;
+    padding: 0;
+  }
+  #logo img {
+    content: url("./assets/capastudiodanibade.jpg");
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  h1 {
+    padding: 5;
+    margin: 8px auto;
+    font-size: 24px;
+  }
+
+  .div-pai {
+    flex-direction: column; /* Empilhar as divs filhas verticalmente */
+    align-items: center; /* Centralizar as divs filhas horizontalmente */
+    gap: 3vh;
+    top: 20px;
+    margin-top: 0px;
+  }
+
+  .image-limpeza-de-pele,
+  .image-sobrancelha,
+  .image-cilios,
+  .pele {
+    width: 50%;
+  }
+
+  .information {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: px;
+  }
+
+  .information img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    bottom: 0px;
+  }
+
+  .content {
+    display: none;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .active .arrow {
+    transform: rotate(180deg);
+  }
+
+  .agendamento {
+    margin: 0;
+  }
+
+  #social-links ion-icon {
+    padding: 20px;
+    margin: 0;
+    margin-top: 40px;
+  }
+
+  #end {
+    top: 10vh;
+  }
+}
