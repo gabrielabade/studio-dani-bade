@@ -11,7 +11,7 @@ Este é um projeto de página web desenvolvido para o Studio Dani Bade, apresent
 
 ### Como visualizar
 
-Você pode visualizar a aplicação online [aqui](#inserir-link-do-projeto-hospedado).
+Você pode visualizar a aplicação online [aqui](https://gabrielabade.github.io/studio-dani-bade/).
 
 ### Tecnologias utilizadas
 
@@ -21,6 +21,7 @@ Você pode visualizar a aplicação online [aqui](#inserir-link-do-projeto-hospe
 
 <div>
 
-![Preview do projeto](#inserir-link-das-imagens-preview)
+![Preview do projeto](.github/preview.png)
+![Preview do projeto](.github/preview1.png)
 
-</div># studio-dani-bade
+</div>
