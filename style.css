@@ -240,7 +240,7 @@ footer {
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 15px;
   }
   #logo {
     width: 100%;
@@ -254,9 +254,9 @@ footer {
   }
 
   h1 {
-    padding: 5;
-    margin: 8px auto;
-    font-size: 24px;
+    padding: 4;
+    margin: 6px auto;
+    font-size: 20px;
   }
 
   .div-pai {
@@ -278,7 +278,6 @@ footer {
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: px;
   }
 
   .information img {
