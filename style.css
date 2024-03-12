@@ -12,10 +12,7 @@ body {
   text-align: center;
   align-items: center;
   width: 100vw;
-  background-color: rgba(235, 216, 210, 0.4);
-}
-main {
-  background-color: rgba(235, 216, 210, 0.4);
+  background-color: rgba(235, 216, 210, 0.5);
 }
 
 #logo {
