@@ -12,6 +12,13 @@
   --primary-dark: #6b514a;
   --bg-light: rgba(235, 216, 210, 0.5);
   --white: #ffffff;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -27,11 +34,22 @@ body {
 }
 
 #logo {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
   width: 100vw;
-  background: linear-gradient(to right, #e9a194, var(--primary-color), #e9a194);
+  background: rgba(233, 161, 148, 0.95);
+  backdrop-filter: blur(10px);
   margin: auto;
-  padding: 25px 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+main {
+  margin-top: 150px;
+  width: 100%;
+  padding: 20px;
 }
 
 h1 {
@@ -60,7 +78,7 @@ h3 {
   padding: 20px;
   cursor: pointer;
   font-size: 32px;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth);
   letter-spacing: 1px;
 }
 
@@ -74,7 +92,7 @@ h3:hover {
   display: block;
   margin: 0px auto;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: var(--transition-smooth);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
@@ -82,64 +100,16 @@ h3:hover {
   transform: scale(1.05) rotate(-2deg);
 }
 
-.box-pulse {
-  width: 100%;
-  width: 250px;
-  margin: 0 auto;
-}
-
-.box-pulse a {
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.1em;
-  transition: all 0.4s;
-}
-
-.agendamento {
-  margin-top: 20px;
-  color: var(--primary-dark);
-  border: none;
-  background: linear-gradient(45deg, #e9a194, var(--primary-color));
-  border-radius: 30px;
-  width: 280px;
-  height: 65px;
-  font-size: 22px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(235, 177, 163, 0.5);
-  transition: all 0.3s ease;
-  animation: pulse 1.5s ease infinite;
-  letter-spacing: 0.5px;
-}
-
-.agendamento:hover {
-  background: linear-gradient(45deg, var(--primary-color), #e9a194);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(235, 177, 163, 0.7);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .div-pai {
-margin-top: 100px;
+  margin-top: 100px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-evenly;
+  gap: 30px;
   position: relative;
   text-align: center;
   width: 100%;
+  padding: 0 20px;
 }
 
 .section {
@@ -149,11 +119,27 @@ margin-top: 100px;
   align-items: center;
   max-width: 350px;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: var(--transition-smooth);
   padding: 20px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(235, 177, 163, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(235, 177, 163, 0.1), rgba(255, 255, 255, 0.2));
+  transform: translateY(100%);
+  transition: var(--transition-smooth);
+  z-index: -1;
 }
 
 .section:hover {
@@ -161,10 +147,8 @@ margin-top: 100px;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.content {
-  width: 100%;
-  height: auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.section:hover::before {
+  transform: translateY(0);
 }
 
 .image-limpeza-de-pele,
@@ -177,8 +161,8 @@ margin-top: 100px;
   background-color: var(--primary-color);
   object-fit: cover;
   border: 5px solid white;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
 }
 
 .image-limpeza-de-pele:hover,
@@ -195,13 +179,28 @@ margin-top: 100px;
   padding: 30px;
   margin: 25px auto;
   color: var(--primary-dark);
-  border: 3px dotted var(--primary-color);
-  background-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
   font-size: 18px;
   line-height: 1.7;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  position: relative;
+  transform-origin: top;
+  animation: slideDown 0.3s ease-out;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .info-cilios:hover,
@@ -231,14 +230,88 @@ margin-top: 100px;
   justify-content: center;
 }
 
+.box-pulse {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.box-pulse a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  transition: var(--transition-smooth);
+}
+
+.agendamento {
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  color: var(--primary-dark);
+  border: none;
+  background: linear-gradient(45deg, #e9a194, var(--primary-color));
+  border-radius: 30px;
+  width: 280px;
+  height: 65px;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(235, 177, 163, 0.5);
+  transition: var(--transition-smooth);
+  animation: pulse 1.5s ease infinite;
+  letter-spacing: 0.5px;
+}
+
+.agendamento::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg) translateY(100%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg) translateY(-100%);
+  }
+}
+
+.agendamento:hover {
+  background: linear-gradient(45deg, var(--primary-color), #e9a194);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 177, 163, 0.7);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .benefits {
   margin: 80px auto;
   padding: 50px 40px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 30px;
   max-width: 900px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(235, 177, 163, 0.3);
 }
 
 .benefits h2 {
@@ -256,10 +329,19 @@ margin-top: 100px;
 }
 
 .benefits-content p {
+  position: relative;
+  padding: 15px 25px 15px 35px;
   background: linear-gradient(45deg, rgba(235, 177, 163, 0.1), rgba(255, 255, 255, 0.8));
-  padding: 15px 25px;
   border-radius: 15px;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth);
+}
+
+.benefits-content p::before {
+  content: '✓';
+  position: absolute;
+  left: 15px;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .benefits-content p:hover {
@@ -273,20 +355,13 @@ margin-top: 100px;
   background: rgba(255, 255, 255, 0.8);
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .horario h4 {
   font-size: 24px;
   margin-bottom: 15px;
   color: var(--primary-dark);
-}
-
-.endereco {
-  margin: 25px 0;
-  color: #8b6b63;
-  font-size: 17px;
-  line-height: 1.6;
 }
 
 #social-links {
@@ -300,8 +375,11 @@ margin-top: 100px;
   color: var(--primary-color);
   width: 45px;
   height: 55px;
-  padding: 20px;
-  transition: all 0.3s ease;
+  padding: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
 }
 
 #social-links ion-icon:hover {
@@ -317,6 +395,13 @@ margin-top: 100px;
   width: 100%;
 }
 
+.endereco {
+  margin: 25px 0;
+  color: #8b6b63;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
 footer {
   width: 100vw;
   color: var(--primary-color);
@@ -327,6 +412,10 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
+  main {
+    margin-top: 80px;
+  }
+
   header {
     width: 100%;
     margin: 0;
@@ -352,6 +441,7 @@ footer {
   #logo {
     width: 100%;
     padding: 0;
+    position: relative;
   }
 
   #logo img {
@@ -374,12 +464,6 @@ footer {
     width: 100%;
     max-width: none;
     padding: 15px;
-  }
-
-  .content {
-    max-height: 100%;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
   }
 
   .information {
@@ -419,27 +503,5 @@ footer {
 
   .benefits-content {
     font-size: 16px;
-  }
-
-  .benefits-content p {
-    padding: 12px 20px;
-  }
-
-  #social-links {
-    gap: 15px;
-  }
-
-  #social-links ion-icon {
-    padding: 15px;
-  }
-
-  #end {
-    margin-top: 30px;
-    padding: 30px 0;
-  }
-
-  .horario {
-    margin: 30px 20px;
-    padding: 20px;
   }
 }
