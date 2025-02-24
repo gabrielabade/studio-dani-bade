@@ -156,17 +156,17 @@
               <label for="nome">Nome</label>
               <input type="text" id="nome" name="nome" required data-target="nome">
             </div>
-          
+
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required data-target="email">
             </div>
-          
+
             <div class="form-group">
               <label for="telefone">WhatsApp</label>
               <input type="tel" id="telefone" name="telefone" required data-target="telefone">
             </div>
-          
+
             <div class="form-group">
               <label>Serviços de Interesse</label>
               <div class="checkbox-group">
@@ -175,23 +175,25 @@
                     data-target="design-sobrancelha">
                   <label for="design-sobrancelha">Design de Sobrancelha</label>
                 </div>
-          
+
                 <div class="checkbox-item">
-                  <input type="checkbox" id="design-henna" name="servicos" value="Design com Henna" data-target="design-henna">
+                  <input type="checkbox" id="design-henna" name="servicos" value="Design com Henna"
+                    data-target="design-henna">
                   <label for="design-henna">Design com Henna</label>
                 </div>
-          
+
                 <div class="checkbox-item">
-                  <input type="checkbox" id="limpeza-pele" name="servicos" value="Limpeza de Pele" data-target="limpeza-pele">
+                  <input type="checkbox" id="limpeza-pele" name="servicos" value="Limpeza de Pele"
+                    data-target="limpeza-pele">
                   <label for="limpeza-pele">Limpeza de Pele</label>
                 </div>
-          
+
                 <div class="checkbox-item">
                   <input type="checkbox" id="cilios-brasileiro" name="servicos" value="Cílios Volume Brasileiro"
                     data-target="cilios-brasileiro">
                   <label for="cilios-brasileiro">Cílios Volume Brasileiro</label>
                 </div>
-          
+
                 <div class="checkbox-item">
                   <input type="checkbox" id="cilios-egipcio" name="servicos" value="Cílios Volume Egípcio"
                     data-target="cilios-egipcio">
@@ -199,18 +201,18 @@
                 </div>
               </div>
             </div>
-          
+
             <div class="form-group">
               <label for="mensagem">Mensagem</label>
               <textarea id="mensagem" name="mensagem" rows="3" data-target="mensagem"></textarea>
             </div>
-          
+
             <div class="form-group">
               <label for="data-preferida">Data Preferida</label>
               <input type="date" id="data-preferida" name="data-preferida" min="<?= date('Y-m-d'); ?>" required
                 data-target="data-preferida">
             </div>
-          
+
             <div class="form-group">
               <label for="horario-preferido">Horário Preferido</label>
               <select id="horario-preferido" name="horario-preferido" required data-target="horario-preferido">
@@ -220,7 +222,7 @@
                 <option value="final-tarde">Final da Tarde (16h - 19h)</option>
               </select>
             </div>
-          
+
             <button type="submit" class="submit-button" data-target="enviar">Enviar via WhatsApp</button>
           </form>
 
@@ -229,12 +231,25 @@
     </div>
 
     <div id="end">
+      <section class="section-end">
+    
+          <div class="telefone">
+            <h4>Telefone</h4>
+            <p>(51) 99541-5520</p>
+          </div>
+          <div class="horario">
+            <h4>Horário de Atendimento</h4>
+            <p>Segunda a Sexta: 9h às 19h</p>
+            <p>Sábado: 9h às 17h</p>
+          </div>
 
-      <div class="horario">
-        <h4>Horário de Atendimento</h4>
-        <p>Segunda a Sexta: 9h às 19h</p>
-        <p>Sábado: 9h às 17h</p>
-      </div>
+          <div class="endereco">
+            <h4>Endereço</h4>
+            <p>Av. São Leopoldo, 1830 - Sala 2</p>
+            <p>Celeste, Campo Bom - RS</p>
+          </div>
+        </div>
+      </section>
 
       <div id="social-links">
         <a href="https://www.facebook.com/studiodanibade/" target="_blank"><ion-icon
@@ -247,11 +262,7 @@
       </div>
 
       <footer>
-        <div class="endereco">
-          <p>Av. São Leopoldo, 1830 - Sala 2</p>
-          <p>Celeste, Campo Bom - RS</p>
-        </div>
-        <P>Com &hearts; desde 2021</P>
+        <p>Com &hearts; desde 2021</p>
       </footer>
     </div>
   </main>
