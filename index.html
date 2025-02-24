@@ -26,8 +26,9 @@
 
   <main>
     <h1>Realce sua beleza natural com profissional especializada</h1>
-    <p class="intro-text">Bem-vinda ao Studio Dani Bade, onde arte e técnica se unem para valorizar sua beleza natural. Com atendimento exclusivo
-    e personalizado, ofereço procedimentos sob medida para realçar sua melhor versão</p>
+    <p class="intro-text">Bem-vinda ao Studio Dani Bade, onde arte e técnica se unem para valorizar sua beleza natural.
+      Com atendimento exclusivo
+      e personalizado, ofereço procedimentos sob medida para realçar sua melhor versão</p>
 
     <div class="div-pai">
       <section class="section">
@@ -128,23 +129,106 @@
       </section>
     </div>
 
-    <section class="benefits">
-      <h2>Por que escolher o Studio Dani Bade?</h2>
-      <div class="benefits-content">
-        <p>Profissional certificada e especializada</p>
-        <p>Produtos de alta qualidade</p>
-        <p>Ambiente higienizado e acolhedor</p>
-        <p>Atendimento personalizado</p>
-        <p>Resultados naturais e duradouros</p>
-      </div>
-    </section>
+    <div class="benefits-form-container">
+      <section class="benefits">
+        <h2>Por que escolher o Studio Dani Bade?</h2>
+        <div class="benefits-content">
+          <p>Profissional certificada e especializada</p>
+          <p>Produtos de alta qualidade</p>
+          <p>Ambiente higienizado e acolhedor</p>
+          <p>Atendimento personalizado</p>
+          <p>Resultados naturais e duradouros</p>
+        </div>
+
+        <div class="box-pulse">
+          <img src="./assets/dani_bade.webp" width="200vw">
+          <a href="https://wa.me/5551995415520" target="_blank">
+            <button class="agendamento">Agende Sua Transformação!</button>
+          </a>
+        </div>
+      </section>
+
+      <section id="contato" class="contact-section">
+        <h2>Entre em Contato</h2>
+        <div class="contact-container">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required data-target="nome">
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required data-target="email">
+            </div>
+          
+            <div class="form-group">
+              <label for="telefone">WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" required data-target="telefone">
+            </div>
+          
+            <div class="form-group">
+              <label>Serviços de Interesse</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="design-sobrancelha" name="servicos" value="Design de Sobrancelha"
+                    data-target="design-sobrancelha">
+                  <label for="design-sobrancelha">Design de Sobrancelha</label>
+                </div>
+          
+                <div class="checkbox-item">
+                  <input type="checkbox" id="design-henna" name="servicos" value="Design com Henna" data-target="design-henna">
+                  <label for="design-henna">Design com Henna</label>
+                </div>
+          
+                <div class="checkbox-item">
+                  <input type="checkbox" id="limpeza-pele" name="servicos" value="Limpeza de Pele" data-target="limpeza-pele">
+                  <label for="limpeza-pele">Limpeza de Pele</label>
+                </div>
+          
+                <div class="checkbox-item">
+                  <input type="checkbox" id="cilios-brasileiro" name="servicos" value="Cílios Volume Brasileiro"
+                    data-target="cilios-brasileiro">
+                  <label for="cilios-brasileiro">Cílios Volume Brasileiro</label>
+                </div>
+          
+                <div class="checkbox-item">
+                  <input type="checkbox" id="cilios-egipcio" name="servicos" value="Cílios Volume Egípcio"
+                    data-target="cilios-egipcio">
+                  <label for="cilios-egipcio">Cílios Volume Egípcio</label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="3" data-target="mensagem"></textarea>
+            </div>
+          
+            <div class="form-group">
+              <label for="data-preferida">Data Preferida</label>
+              <input type="date" id="data-preferida" name="data-preferida" min="<?= date('Y-m-d'); ?>" required
+                data-target="data-preferida">
+            </div>
+          
+            <div class="form-group">
+              <label for="horario-preferido">Horário Preferido</label>
+              <select id="horario-preferido" name="horario-preferido" required data-target="horario-preferido">
+                <option value="">Selecione um horário</option>
+                <option value="manha">Manhã (9h - 12h)</option>
+                <option value="tarde">Tarde (13h - 16h)</option>
+                <option value="final-tarde">Final da Tarde (16h - 19h)</option>
+              </select>
+            </div>
+          
+            <button type="submit" class="submit-button" data-target="enviar">Enviar via WhatsApp</button>
+          </form>
+
+        </div>
+      </section>
+    </div>
 
     <div id="end">
-      <div class="box-pulse">
-        <a href="https://wa.me/5551995415520" target="_blank">
-          <button class="agendamento">Agende sua Transformação!</button>
-        </a>
-      </div>
 
       <div class="horario">
         <h4>Horário de Atendimento</h4>

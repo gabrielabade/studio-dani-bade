@@ -80,6 +80,8 @@ h3 {
   font-size: 32px;
   transition: var(--transition-smooth);
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 }
 
 h3:hover {
@@ -103,7 +105,7 @@ h3:hover {
 .div-pai {
   margin-top: 100px;
   display: flex;
-  align-items: stretch;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 30px;
   position: relative;
@@ -117,14 +119,17 @@ h3:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 300px;
   max-width: 350px;
   cursor: pointer;
   transition: var(--transition-smooth);
   padding: 20px;
   background: rgba(255, 255, 255, 0.5);
+  background: none;
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(235, 177, 163, 0.3);
+  border: none;
   position: relative;
   overflow: hidden;
 }
@@ -172,12 +177,27 @@ h3:hover {
   border-color: var(--primary-color);
 }
 
+.content {
+  display: none;
+  width: 100%;
+  max-width: 320px;
+  margin: 25px auto;
+  padding: 0 20px 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.content[style="display: block;"] {
+  max-height: 1000px;
+  animation: fadeIn 0.5s ease;
+}
+
 .info-cilios,
 .info-limpeza,
 .info-sobrancelha {
-  max-width: 320px;
+  max-width: 100%;
   padding: 30px;
-  margin: 25px auto;
   color: var(--primary-dark);
   background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
@@ -186,6 +206,7 @@ h3:hover {
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth);
   position: relative;
+  border: 3px dotted var(--primary-color);
   transform-origin: top;
   animation: slideDown 0.3s ease-out;
   backdrop-filter: blur(5px);
@@ -211,13 +232,14 @@ h3:hover {
 }
 
 .service-description {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-style: italic;
   color: #8b6b63;
   font-size: 19px;
 }
 
 .service-details {
+  line-height: 1.6;
   text-align: left;
   padding-left: 15px;
   color: #6b514a;
@@ -231,8 +253,17 @@ h3:hover {
 }
 
 .box-pulse {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   width: 250px;
   margin: 0 auto;
+}
+
+.box-pulse img {
+  margin-top: 3rem;
+  width: 200px;
 }
 
 .box-pulse a {
@@ -387,6 +418,126 @@ h3:hover {
   color: var(--primary-dark);
 }
 
+/* Estilo para o formulário de contato */
+.contact-section {
+  margin: 80px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  max-width: 900px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+}
+
+.contact-section h2 {
+  color: var(--primary-dark);
+  margin-bottom: 35px;
+  font-size: 32px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(235, 177, 163, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(235, 177, 163, 0.2);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+.checkbox-item label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.submit-button {
+  margin-top: 10px;
+  color: var(--white);
+  border: none;
+  background: linear-gradient(45deg, #e9a194, var(--primary-color));
+  border-radius: 30px;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(235, 177, 163, 0.5);
+  transition: var(--transition-smooth);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button:hover {
+  background: linear-gradient(45deg, var(--primary-color), #e9a194);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 177, 163, 0.7);
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: shine 3s infinite;
+}
+
 #end {
   position: relative;
   padding: 50px 0;
@@ -464,12 +615,16 @@ footer {
     width: 100%;
     max-width: none;
     padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(235, 177, 163, 0.3);
   }
 
   .information {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
     cursor: pointer;
   }
 
@@ -477,9 +632,33 @@ footer {
     transition: transform 0.3s ease;
   }
 
+  /* Animação de aparecimento suave */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Rotação da seta */
+  ion-icon[name="chevron-down-outline"] {
+    transition: transform 0.3s ease;
+  }
+
+  ion-icon[name="chevron-down-outline"].arrow-up {
+    transform: rotate(180deg);
+  }
+
   .information img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--primary-color);
+    padding: 5px;
   }
 
   .info-cilios,
@@ -504,4 +683,111 @@ footer {
   .benefits-content {
     font-size: 16px;
   }
+
+  .contact-section {
+    padding: 30px 20px;
+    margin: 40px 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 80px auto;
+    max-width: 80vw;
+  }
+
+  .benefits,
+  .contact-section {
+    margin: 0;
+    height: 100%;
+  }
+
+  /* Ajusta altura do formulário para alinhar com os benefícios */
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reduz o espaço entre os itens do formulário */
+  .form-group {
+    margin-bottom: 15px;
+  }
+}
+
+/* Estilos do botão de agendamento aprimorado */
+.agendamento {
+  width: 300px;
+  height: 70px;
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  animation: pulse 2s ease infinite;
+  position: relative;
+  z-index: 10;
+}
+
+/* Efeito de destaque no botão */
+.agendamento::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 35px;
+  background: transparent;
+  border: 2px solid rgba(233, 161, 148, 0.5);
+  z-index: -1;
+  animation: expandBorder 2s ease-in-out infinite;
+}
+
+@keyframes expandBorder {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* Estilo especial para destacar o card aberto */
+.section-active {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--primary-color);
+}
+
+/* Estilos para os ícones do card quando aberto */
+.icon-active {
+  transform: rotate(180deg);
+  color: var(--primary-dark);
 }
