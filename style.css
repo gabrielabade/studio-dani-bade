@@ -122,7 +122,7 @@ h3:hover {
   min-width: 300px;
   max-width: 350px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
   padding: 20px;
   background: rgba(255, 255, 255, 0.5);
   background: none;
@@ -234,7 +234,7 @@ h3:hover {
 .service-description {
   margin-bottom: 15px;
   font-style: italic;
-  color: #8b6b63;
+  color: var(--primary-dark);
   font-size: 19px;
 }
 
@@ -242,7 +242,7 @@ h3:hover {
   line-height: 1.6;
   text-align: left;
   padding-left: 15px;
-  color: #6b514a;
+  color: var(--primary-dark);
 }
 
 .service-details span {
@@ -276,15 +276,16 @@ h3:hover {
 .agendamento {
   position: relative;
   overflow: hidden;
-  margin-top: 20px;
   color: var(--white);
   border: none;
   background: linear-gradient(45deg, #e9a194, var(--primary-color));
   border-radius: 30px;
-  width: 280px;
-  height: 65px;
-  font-size: 22px;
-  font-weight: 600;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(235, 177, 163, 0.5);
   transition: var(--transition-smooth);
@@ -482,6 +483,12 @@ h3:hover {
   box-shadow: 0 0 0 3px rgba(235, 177, 163, 0.2);
 }
 
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: rgba(235, 177, 163, 0.6);
+}
+
 .checkbox-group {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -541,6 +548,13 @@ h3:hover {
   animation: shine 3s infinite;
 }
 
+.submit-button,
+.agendamento,
+.section,
+#social-links ion-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 #end {
   position: relative;
   padding: 50px 0;
@@ -566,7 +580,8 @@ h3:hover {
   flex: 1;
   min-width: 250px;
   padding: 20px;
-  background: var(--white);  border-radius: 15px;
+  background: var(--white);
+  border-radius: 15px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -583,11 +598,15 @@ h3:hover {
 
 footer {
   width: 100vw;
-  color: var(--primary-color);
+  height: auto;
+  color: var(--primary-dark);
   text-align: center;
   font-size: 18px;
-  padding: 30px 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, rgba(233, 161, 148, 0.3), rgba(235, 177, 163, 0.3));
+  margin-top: 0;
+  padding: 30px 0;
+  border-top: 1px solid rgba(233, 161, 148, 0.2);
 }
 
 @media screen and (max-width: 767px) {
@@ -738,8 +757,11 @@ footer {
   }
 
   .contact-section {
-    padding: 30px 20px;
-    margin: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
   }
 
   .contact-section h2 {
