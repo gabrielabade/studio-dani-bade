@@ -1,40 +1,71 @@
 // Aguardar o carregamento do DOM
 document.addEventListener('DOMContentLoaded', function () {
+  // Elementos da navegação
+  const navbar = document.querySelector('.navbar');
+  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link, .nav-menu a');
+  const backToTopButton = document.getElementById('backToTop');
 
   // Inicialização do preloader
   window.addEventListener('load', function () {
     const preloader = document.getElementById('preloader');
-    preloader.style.opacity = '0';
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 500);
+    if (preloader) {
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
   });
 
   // Menu mobile toggle
-  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
   if (mobileNavToggle) {
     mobileNavToggle.addEventListener('click', function () {
       this.classList.toggle('active');
       navMenu.classList.toggle('active');
-      document.body.classList.toggle('no-scroll');
+      document.body.classList.toggle('menu-open');
+
+      // Ajusta o atributo aria-expanded para acessibilidade
+      const isExpanded = this.classList.contains('active');
+      this.setAttribute('aria-expanded', isExpanded);
+
+      // Evitar scroll quando o menu está aberto
+      if (isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Fechar menu ao clicar fora dele
+    document.addEventListener('click', function (event) {
+      const isClickInsideMenu = navMenu.contains(event.target);
+      const isClickOnToggle = mobileNavToggle.contains(event.target);
+
+      if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+        mobileNavToggle.click();
+      }
+    });
+
+    // Fechar menu ao redimensionar a janela para desktop
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
+        mobileNavToggle.click();
+      }
     });
   }
 
   // Fechar menu ao clicar em links
-  const navLinks = document.querySelectorAll('.nav-menu a');
   navLinks.forEach(link => {
     link.addEventListener('click', function () {
-      navMenu.classList.remove('active');
-      mobileNavToggle.classList.remove('active');
-      document.body.classList.remove('no-scroll');
+      if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+        mobileNavToggle.click();
+      }
     });
   });
 
   // Mudança de estilo do navbar no scroll
   window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
@@ -42,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Mostrar/esconder botão "voltar ao topo"
-    const backToTopButton = document.getElementById('backToTop');
     if (backToTopButton) {
       if (window.scrollY > 300) {
         backToTopButton.classList.add('visible');
@@ -53,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Botão "voltar ao topo"
-  const backToTopButton = document.getElementById('backToTop');
   if (backToTopButton) {
     backToTopButton.addEventListener('click', function (e) {
       e.preventDefault();
@@ -148,44 +177,75 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Contadores animados
-  const startCounters = () => {
+  // Animação dos contadores na seção hero
+  const setupCounterAnimation = () => {
     const counters = document.querySelectorAll('.trust-item .count');
 
-    counters.forEach(counter => {
-      const target = parseFloat(counter.innerText.replace(/[^\d.]/g, ''));
-      const increment = target / 50;
-      let current = 0;
+    // Função para iniciar os contadores com animação suave
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        // Obtém o valor alvo do texto ou do atributo data-count
+        const target = parseFloat(counter.getAttribute('data-count') || counter.innerText.replace(/[^\d.]/g, ''));
+        // Define a velocidade do contador
+        const speed = 200;
+        // Calcula o incremento para cada etapa da animação
+        const increment = target / speed;
+        // Valor inicial do contador
+        let currentCount = 0;
 
-      const updateCounter = () => {
-        if (current < target) {
-          current += increment;
-          counter.innerText = Math.round(current).toString();
-          setTimeout(updateCounter, 20);
-        } else {
-          counter.innerText = target;
-        }
-      };
+        // Função para atualizar o contador
+        const updateCounter = () => {
+          if (currentCount < target) {
+            // Incrementa o valor atual
+            currentCount += increment;
 
-      updateCounter();
-    });
+            // Formata o número dependendo se é inteiro ou decimal
+            if (Number.isInteger(target)) {
+              counter.textContent = Math.floor(currentCount);
+            } else {
+              // Para números decimais, exibe com 1 casa decimal
+              counter.textContent = currentCount.toFixed(1);
+            }
+
+            // Continua a animação
+            requestAnimationFrame(updateCounter);
+          } else {
+            // Quando atingir o alvo, define o valor exato
+            counter.textContent = target;
+
+            // Adiciona o símbolo "+" para números inteiros grandes
+            if (Number.isInteger(target) && target > 100) {
+              counter.textContent += '+';
+            }
+          }
+        };
+
+        // Inicia a animação do contador
+        updateCounter();
+      });
+    };
+
+    // Inicia os contadores quando a seção estiver visível usando IntersectionObserver
+    const heroSection = document.querySelector('.hero');
+
+    if (heroSection && counters.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Inicia os contadores
+            setTimeout(animateCounters, 500);
+            // Para de observar após iniciar os contadores
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(heroSection);
+    }
   };
 
-  // Iniciar contadores quando a seção estiver visível
-  const heroSection = document.querySelector('.hero');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        startCounters();
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  if (heroSection) {
-    observer.observe(heroSection);
-  }
+  // Iniciar animação dos contadores
+  setupCounterAnimation();
 
   // Envio do formulário via WhatsApp
   const contactForm = document.getElementById('contact-form');
@@ -208,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const mensagem = document.getElementById('mensagem').value;
 
       // Formatar data
-      const dataFormatada = new Date(dataPreferida).toLocaleDateString('pt-BR');
+      const dataFormatada = dataPreferida ? new Date(dataPreferida).toLocaleDateString('pt-BR') : '';
 
       // Criar mensagem para WhatsApp
       let whatsappMessage = `Olá! Gostaria de agendar um horário no Studio Dani Bade.\n\n`;
@@ -228,6 +288,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Abrir WhatsApp Web ou App
       window.open(`https://wa.me/5551995415520?text=${encodedMessage}`, '_blank');
+    });
+  }
+
+  // Máscara para campo de telefone
+  const telefoneInput = document.getElementById('telefone');
+
+  if (telefoneInput) {
+    telefoneInput.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+
+      if (value.length <= 11) {
+        // Formatar como (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
+        if (value.length > 2) {
+          value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+        }
+        if (value.length > 10) {
+          value = `${value.substring(0, 10)}-${value.substring(10)}`;
+        }
+      }
+
+      e.target.value = value;
     });
   }
 
@@ -268,27 +349,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       const scrollPosition = window.pageYOffset;
       parallaxBackground.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-    });
-  }
-
-  // Máscara para campo de telefone
-  const telefoneInput = document.getElementById('telefone');
-
-  if (telefoneInput) {
-    telefoneInput.addEventListener('input', function (e) {
-      let value = e.target.value.replace(/\D/g, '');
-
-      if (value.length <= 11) {
-        // Formatar como (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
-        if (value.length > 2) {
-          value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
-        }
-        if (value.length > 10) {
-          value = `${value.substring(0, 10)}-${value.substring(10)}`;
-        }
-      }
-
-      e.target.value = value;
     });
   }
 

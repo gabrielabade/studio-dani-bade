@@ -188,7 +188,7 @@ img {
   font-size: 1.8rem;
 }
 
-/* Navbar */
+/* ======= ESTILOS DA NAVBAR APRIMORADA ======= */
 .navbar {
   position: fixed;
   top: 0;
@@ -198,13 +198,14 @@ img {
   box-shadow: var(--shadow);
   z-index: 1000;
   padding: 1.5rem 0;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   transform: translateY(0);
 }
 
 .navbar.scrolled {
   padding: 1rem 0;
-  background-color: var(--accent-color);
+  background-color: rgba(248, 191, 191, 0.95);
+  /* Versão semi-transparente */
 }
 
 .navbar .container {
@@ -213,53 +214,69 @@ img {
   justify-content: space-between;
 }
 
+/* Logo styling */
 .logo {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1001;
+  /* Mantém o logo acima do menu mobile */
 }
 
 .logo-image {
   height: 5rem;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .scrolled .logo-image {
   height: 4rem;
 }
 
+/* Nav menu styling */
 .nav-menu {
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-menu li {
   margin-left: 2.5rem;
+  position: relative;
 }
 
-.nav-menu a {
-  color: var(--light-text);
+.nav-menu .nav-link {
+  color: var(--secondary-color);
   font-weight: 500;
   position: relative;
   padding: 0.5rem 0;
   font-size: 1.6rem;
+  transition: all 0.3s ease;
 }
 
-.nav-menu a:before {
+.nav-menu .nav-link:before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--background-color);
-  transition: var(--transition);
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
 }
 
-.nav-menu a:hover:before,
-.nav-menu a:focus:before {
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:focus {
+  color: var(--primary-dark);
+}
+
+.nav-menu .nav-link:hover:before,
+.nav-menu .nav-link:focus:before {
   width: 100%;
 }
 
+/* Call to action button */
 .nav-cta a {
   background-color: var(--primary-dark);
   color: white;
@@ -267,10 +284,11 @@ img {
   border-radius: 3rem;
   font-weight: 500;
   box-shadow: 0 4px 10px rgba(212, 169, 167, 0.3);
+  transition: all 0.3s ease;
 }
 
 .nav-cta a:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--secondary-color);
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(212, 169, 167, 0.4);
 }
@@ -279,21 +297,29 @@ img {
 .mobile-nav-toggle {
   display: none;
   flex-direction: column;
+  justify-content: space-between;
   width: 30px;
+  height: 22px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+  z-index: 1001;
+  /* Mantém o toggle acima do menu */
 }
 
 .mobile-nav-toggle span {
   height: 3px;
   width: 100%;
   background-color: var(--secondary-color);
-  margin-bottom: 5px;
   border-radius: 3px;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 .mobile-nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(9px) rotate(45deg);
 }
 
 .mobile-nav-toggle.active span:nth-child(2) {
@@ -301,10 +327,10 @@ img {
 }
 
 .mobile-nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Hero Section */
+/* ======= ESTILOS DO HERO APRIMORADO ======= */
 .hero {
   position: relative;
   height: 100vh;
@@ -316,7 +342,7 @@ img {
   overflow: hidden;
 }
 
-/* Hero Background Styling */
+/* Hero Background */
 .hero-background {
   position: absolute;
   top: 0;
@@ -371,8 +397,6 @@ img {
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   opacity: 0.3;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 0.4;
 }
 
 .pattern-overlay {
@@ -405,7 +429,7 @@ img {
   color: white;
   z-index: 1;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
-  padding: 20px;
+  padding: 3rem;
   border-radius: 10px;
   position: relative;
 }
@@ -417,6 +441,8 @@ img {
   line-height: 1.2;
   margin-bottom: 2rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #f9f9f9;
+  -webkit-text-stroke: 0.5px rgba(226, 226, 226, 0.3);
 }
 
 .hero-content h1 span {
@@ -434,6 +460,7 @@ img {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  color: #f9f9f9;
 }
 
 .hero-content h1,
@@ -484,42 +511,33 @@ img {
 }
 
 /* Botões */
-.btn-primary {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: white;
+.btn-primary,
+.btn-secondary {
   padding: 1.5rem 3rem;
   border-radius: 5rem;
   font-weight: 500;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(212, 169, 167, 0.4);
-  border: none;
-  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(212, 169, 167, 0.4);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(212, 169, 167, 0.5);
-  color: white;
 }
 
 .btn-secondary {
-  display: inline-block;
   background-color: transparent;
   color: white;
-  padding: 1.4rem 2.8rem;
-  border-radius: 5rem;
-  font-weight: 500;
-  transition: var(--transition);
   border: 2px solid white;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1.4rem;
 }
 
 .btn-secondary:hover {
@@ -1696,6 +1714,13 @@ footer {
     display: flex;
   }
 
+  .nav-menu .nav-link {
+    display: block;
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    color: var(--secondary-color);
+  }
+
   .nav-menu {
     position: fixed;
     top: 0;
@@ -1707,9 +1732,10 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     padding: 8rem 3rem 3rem;
-    transition: var(--transition);
+    transition: all 0.3s ease-in-out;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    z-index: 1000;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -1735,6 +1761,28 @@ footer {
   .nav-cta a {
     display: block;
     text-align: center;
+    width: 100%;
+  }
+
+  /* Adicionar overlay escuro quando o menu está aberto */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  /* Ajustes no hero para telas médias */
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-content h1 span {
+    font-size: 3rem;
   }
 }
 
@@ -1748,7 +1796,9 @@ footer {
   }
 
   .hero {
-    height: 80vh;
+    height: auto;
+    min-height: 100vh;
+    padding: 12rem 0 5rem;
   }
 
   .hero-content h1 {
@@ -1762,6 +1812,17 @@ footer {
   .hero-buttons {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .trust-indicators {
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .trust-indicators {
@@ -1817,5 +1878,27 @@ footer {
   .back-to-top {
     bottom: 2rem;
     left: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-content {
+    padding: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.6rem;
+  }
+
+  .logo-image {
+    height: 4rem;
+  }
+
+  .scrolled .logo-image {
+    height: 3.5rem;
   }
 }
