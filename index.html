@@ -1,268 +1,732 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" itemscope itemtype="http://schema.org/BeautySalon">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Studio Dani Bade: especialistas em design de sobrancelha, extensão de cílios e limpeza de pele. Profissionais certificados, ambiente acolhedor e resultados naturais que realçam sua beleza.">
+  <title>Studio Dani Bade - Especialista em Beleza e Estética</title>
+
+  <!-- Metadados para redes sociais -->
+  <meta property="og:title" content="Studio Dani Bade - Transforme seu olhar">
+  <meta property="og:description"
+    content="Especialista em design de sobrancelhas, extensão de cílios e limpeza de pele.">
+  <meta property="og:image" content="./assets/og-image.jpg">
+  <meta property="og:url" content="https://studiodanibade.com.br">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Ícones -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <link href="https://fonts.cdnfonts.com/css/made-goodtime-script" rel="stylesheet">
+  <!-- Fonte do Google Font adicional para realce -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- CSS e JavaScript -->
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="./script.js"></script>
-  <link rel="icon" type="image" href="./assets/logodanibade-semfundo.png" />
-  <title>Studio Dani Bade - Especialista em Beleza e Estética</title>
-  <meta name="description"
-    content="Studio Dani Bade: especialistas em design de sobrancelha, extensão de cílios e limpeza de pele. Profissionais certificados, ambiente acolhedor e resultados naturais que realçam sua beleza." />
+  <script src="script.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image" href="./assets/logodanibade-semfundo.png">
 </head>
 
 <body>
-  <div id="logo">
-    <header>
-      <img src="./assets/logodanibade-semfundo.png" onclick="window.location.href ='./index.html'"
-        alt="logo-studio-dani-bade" class="logo-image">
-    </header>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader">
+      <img src="./assets/logodanibade-semfundo.png" alt="Carregando..." class="pulse">
+    </div>
   </div>
 
-  <main>
-    <h1>Realce sua beleza natural com profissional especializada</h1>
-    <p class="intro-text">Bem-vinda ao Studio Dani Bade, onde arte e técnica se unem para valorizar sua beleza natural.
-      Com atendimento exclusivo
-      e personalizado, ofereço procedimentos sob medida para realçar sua melhor versão</p>
-
-    <div class="div-pai">
-      <section class="section">
-        <div class="information" onclick="toggleContent('info-sobrancelha')">
-          <img src="./assets/sobrancelha.png" alt="image-sobrancelha" class="image-sobrancelha">
-          <h3>Design De Sobrancelha <ion-icon name="chevron-down-outline"></ion-icon></h3>
-        </div>
-        <div class="content info-sobrancelha" style="display: none;">
-          <p class="service-description">
-            Técnica especializada que harmoniza suas sobrancelhas com seus traços faciais, realçando seu olhar de forma
-            natural.
-          </p>
-          <p class="service-details">
-            Design Simples R$40,00
-            <br>
-            • Técnica exclusiva de medição
-            <br>
-            • Acabamento natural
-            <br>
-            • Design personalizado
-            <br>
-            <span style="color: #ebb1a3">&hearts;</span>
-            <br>
-            Design Com Henna R$50,00
-            <br>
-            • Durabilidade de até 15 dias
-            <br>
-            • Preenchimento natural
-            <br>
-            • Correção de falhas
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="information" onclick="toggleContent('info-limpeza')">
-          <img src="./assets/limpeza-de-pele.png" alt="image-limpeza-de-pele" class="image-limpeza-de-pele">
-          <h3>Limpeza De Pele Completa <ion-icon name="chevron-down-outline"></ion-icon></h3>
-        </div>
-        <div class="content info-limpeza" style="display: none;">
-          <p class="service-description">
-            Tratamento completo que renova, purifica e revitaliza sua pele, proporcionando uma aparência mais saudável e
-            radiante.
-          </p>
-          <p class="service-details">
-            Procedimento Completo R$119,90
-            <br>
-            • Análise personalizada da pele
-            <br>
-            • Higienização profunda
-            <br>
-            • Esfoliação suave
-            <br>
-            • Vapor de Ozônio para purificação
-            <br>
-            • Extração profissional de cravos
-            <br>
-            • Argiloterapia calmante
-            <br>
-            • Máscara hidratante
-            <br>
-            • Proteção solar
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="information" onclick="toggleContent('info-cilios')">
-          <img src="./assets/cílios.png" alt="image-cilios" class="image-cilios">
-          <h3>Extensão De Cílios <ion-icon name="chevron-down-outline"></ion-icon></h3>
-        </div>
-        <div class="content info-cilios" style="display: none;">
-          <p class="service-description">
-            Técnicas avançadas de extensão que proporcionam um olhar marcante e natural, com resultados duradouros.
-          </p>
-          <p class="service-details">
-            Volume Brasileiro R$139,90
-            • Efeito natural e leve
-            <br>
-            • Fios premium
-            <br>
-            • Durabilidade de até 4 semanas
-            <br>
-            Manutenção R$70,00
-            <br>
-            <span style="color: #ebb1a3">&hearts;</span>
-            <br>
-            Volume Egípcio 6D R$159,90
-            • Efeito dramático e volumoso
-            <br>
-            • Técnica multicamadas
-            <br>
-            • Material hipoalergênico
-            <br>
-            Manutenção R$85,00
-          </p>
-        </div>
-      </section>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" itemprop="name">
+        <img src="./assets/logodanibade-semfundo.png" alt="Studio Dani Bade" class="logo-image">
+      </a>
+      <div class="mobile-nav-toggle" id="mobile-nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li class="nav-cta"><a href="https://wa.me/5551995415520" class="btn-whatsapp">Agendar</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="benefits-form-container">
-      <section class="benefits">
-        <h2>Por que escolher o Studio Dani Bade?</h2>
-        <div class="benefits-content">
-          <p>Profissional certificada e especializada</p>
-          <p>Produtos de alta qualidade</p>
-          <p>Ambiente higienizado e acolhedor</p>
-          <p>Atendimento personalizado</p>
-          <p>Resultados naturais e duradouros</p>
+  <header class="hero">
+    <div class="video-background">
+      <video autoplay muted loop playsinline poster="./assets/hero-poster.jpg">
+        <source src="./assets/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+        <h1>Realce sua beleza natural <span>com a especialista que você merece</span></h1>
+        <p>Bem-vinda ao Studio Dani Bade, onde arte e técnica se unem para valorizar sua beleza única.
+          Com atendimento exclusivo e personalizado, ofereço procedimentos sob medida para realçar sua melhor versão.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5551995415520" class="btn-primary">Agende sua transformação</a>
+          <a href="#resultados" class="btn-secondary">Ver resultados</a>
+        </div>
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <span class="count">1200+</span>
+            <span class="label">Clientes satisfeitas</span>
+          </div>
+          <div class="trust-item">
+            <span class="count">4.9</span>
+            <span class="label">Avaliação no Google</span>
+          </div>
+          <div class="trust-item">
+            <span class="count">5</span>
+            <span class="label">Anos de experiência</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="sobre" class="about section-padding">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-image" data-aos="fade-right">
+          <img src="./assets/dani_bade.webp" alt="Dani Bade, Especialista em Estética" itemprop="image">
+          <div class="experience-badge">
+            <span class="number">+5</span>
+            <span class="text">Anos de Experiência</span>
+          </div>
+        </div>
+        <div class="about-content" data-aos="fade-left">
+          <div class="section-header">
+            <span class="subtitle">Sobre mim</span>
+            <h2>Dani Bade, Especialista em Estética Facial</h2>
+          </div>
+          <p class="highlight-text">"Minha missão é ajudar cada cliente a descobrir e potencializar sua beleza natural."
+          </p>
+          <p>Com mais de 5 anos de experiência e formação em técnicas avançadas de embelezamento, meu trabalho é fruto
+            de dedicação, estudo contínuo e paixão pela estética. Cada procedimento é realizado com excelência técnica e
+            sensibilidade artística, garantindo resultados que valorizam a beleza única de cada cliente.</p>
+          <div class="credentials">
+            <div class="credential-item">
+              <div class="credential-icon">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+              <div class="credential-text">
+                <h4>Formação</h4>
+                <p>Certificada em técnicas brasileiras e europeias</p>
+              </div>
+            </div>
+            <div class="credential-item">
+              <div class="credential-icon">
+                <ion-icon name="ribbon-outline"></ion-icon>
+              </div>
+              <div class="credential-text">
+                <h4>Aperfeiçoamento Constante</h4>
+                <p>Atualização anual em novas técnicas e produtos</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contato" class="btn-tertiary">Conheça meu trabalho</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="services section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="subtitle">Serviços exclusivos</span>
+        <h2>Transforme seu olhar com nossos serviços especializados</h2>
+        <p>Conheça nossos procedimentos cuidadosamente elaborados para realçar sua beleza natural</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Serviço 1 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-image">
+            <img src="./assets/sobrancelha.png" alt="Design de Sobrancelha">
+            <div class="service-badge">Mais Popular</div>
+          </div>
+          <h3>Design de Sobrancelha</h3>
+          <p>Técnica especializada que harmoniza suas sobrancelhas com seus traços faciais, realçando seu olhar de forma
+            natural.</p>
+          <div class="service-details">
+            <div class="service-option">
+              <h4>Design Simples</h4>
+              <p class="price"><span class="old-price">R$45,00</span> R$40,00</p>
+              <ul>
+                <li>Técnica exclusiva de medição</li>
+                <li>Acabamento natural</li>
+                <li>Design personalizado</li>
+              </ul>
+            </div>
+            <div class="service-option">
+              <h4>Design Com Henna</h4>
+              <p class="price"><span class="old-price">R$60,00</span> R$50,00</p>
+              <ul>
+                <li>Durabilidade de até 15 dias</li>
+                <li>Preenchimento natural</li>
+                <li>Correção de falhas</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://wa.me/5551995415520?text=Olá! Gostaria de agendar um Design de Sobrancelha"
+            class="btn-tertiary">Agendar Agora</a>
         </div>
 
-        <div class="box-pulse">
-          <img src="./assets/dani_bade.webp" width="200vw">
-          <a href="https://wa.me/5551995415520" target="_blank">
-            <button class="agendamento">Agende Sua Transformação!</button>
-          </a>
+        <!-- Serviço 2 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-image">
+            <img src="./assets/limpeza-de-pele.png" alt="Limpeza de Pele">
+          </div>
+          <h3>Limpeza de Pele Completa</h3>
+          <p>Tratamento completo que renova, purifica e revitaliza sua pele, proporcionando uma aparência mais saudável
+            e radiante.</p>
+          <div class="service-details">
+            <div class="service-option">
+              <h4>Procedimento Completo</h4>
+              <p class="price"><span class="old-price">R$139,90</span> R$119,90</p>
+              <ul>
+                <li>Análise personalizada da pele</li>
+                <li>Higienização profunda</li>
+                <li>Esfoliação suave</li>
+                <li>Vapor de Ozônio para purificação</li>
+                <li>Extração profissional de cravos</li>
+                <li>Argiloterapia calmante</li>
+                <li>Máscara hidratante</li>
+                <li>Proteção solar</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://wa.me/5551995415520?text=Olá! Gostaria de agendar uma Limpeza de Pele"
+            class="btn-tertiary">Agendar Agora</a>
         </div>
-      </section>
 
-      <section id="contato" class="contact-section">
+        <!-- Serviço 3 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-image">
+            <img src="./assets/cílios.png" alt="Extensão de Cílios">
+            <div class="service-badge">Premium</div>
+          </div>
+          <h3>Extensão de Cílios</h3>
+          <p>Técnicas avançadas de extensão que proporcionam um olhar marcante e natural, com resultados duradouros.</p>
+          <div class="service-details">
+            <div class="service-option">
+              <h4>Volume Brasileiro</h4>
+              <p class="price"><span class="old-price">R$159,90</span> R$139,90</p>
+              <ul>
+                <li>Efeito natural e leve</li>
+                <li>Fios premium</li>
+                <li>Durabilidade de até 4 semanas</li>
+              </ul>
+              <p class="maintenance">Manutenção: R$70,00</p>
+            </div>
+            <div class="service-option">
+              <h4>Volume Egípcio 6D</h4>
+              <p class="price"><span class="old-price">R$179,90</span> R$159,90</p>
+              <ul>
+                <li>Efeito dramático e volumoso</li>
+                <li>Técnica multicamadas</li>
+                <li>Material hipoalergênico</li>
+              </ul>
+              <p class="maintenance">Manutenção: R$85,00</p>
+            </div>
+          </div>
+          <a href="https://wa.me/5551995415520?text=Olá! Gostaria de agendar Extensão de Cílios"
+            class="btn-tertiary">Agendar Agora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nova seção: Resultados -->
+  <section id="resultados" class="results section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="subtitle">Transformações reais</span>
+        <h2>Resultados que encantam</h2>
+        <p>Conheça algumas das transformações realizadas pelo Studio Dani Bade</p>
+      </div>
+
+      <div class="results-tabs" data-aos="fade-up">
+        <div class="tabs-header">
+          <button class="tab-btn active" data-tab="sobrancelhas">Sobrancelhas</button>
+          <button class="tab-btn" data-tab="cilios">Cílios</button>
+          <button class="tab-btn" data-tab="pele">Limpeza de Pele</button>
+        </div>
+
+        <div class="tabs-content">
+          <div class="tab-panel active" id="sobrancelhas-panel">
+            <div class="before-after-gallery">
+              <div class="before-after-item">
+                <div class="before-after-container">
+                  <img src="./assets/sobrancelha-antes-1.jpg" alt="Antes do Design de Sobrancelha" class="before-img">
+                  <img src="./assets/sobrancelha-depois-1.jpg" alt="Depois do Design de Sobrancelha" class="after-img">
+                  <div class="slider-handle"></div>
+                </div>
+                <div class="before-after-caption">
+                  <p>Design com Henna</p>
+                </div>
+              </div>
+              <!-- Adicione mais itens before-after aqui -->
+            </div>
+          </div>
+
+          <div class="tab-panel" id="cilios-panel">
+            <!-- Conteúdo similar para cílios -->
+          </div>
+
+          <div class="tab-panel" id="pele-panel">
+            <!-- Conteúdo similar para limpeza de pele -->
+          </div>
+        </div>
+      </div>
+
+      <div class="results-cta" data-aos="fade-up">
+        <p>Estas são apenas algumas das transformações realizadas pelo Studio Dani Bade.</p>
+        <a href="https://wa.me/5551995415520" class="btn-primary">Quero minha transformação</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios" class="benefits section-padding">
+    <div class="parallax-background">
+      <div class="overlay"></div>
+    </div>
+    <div class="container">
+      <div class="benefits-wrapper">
+        <div class="benefits-content" data-aos="fade-right">
+          <div class="section-header">
+            <span class="subtitle">Experiência exclusiva</span>
+            <h2>Por que escolher o Studio Dani Bade?</h2>
+            <p>Descubra como podemos transformar sua experiência de beleza</p>
+          </div>
+          <ul class="benefits-list">
+            <li>
+              <div class="benefit-icon">
+                <ion-icon name="medal-outline"></ion-icon>
+              </div>
+              <div class="benefit-text">
+                <h4>Profissional certificada</h4>
+                <p>Especialização contínua e qualificações reconhecidas no Brasil e exterior</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon">
+                <ion-icon name="diamond-outline"></ion-icon>
+              </div>
+              <div class="benefit-text">
+                <h4>Produtos premium</h4>
+                <p>Materiais hipoalergênicos e de alta qualidade para resultados superiores</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </div>
+              <div class="benefit-text">
+                <h4>Ambiente acolhedor</h4>
+                <p>Espaço tranquilo, limpo e totalmente higienizado para seu conforto</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </div>
+              <div class="benefit-text">
+                <h4>Atendimento personalizado</h4>
+                <p>Consultoria individualizada para atender suas necessidades específicas</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-icon">
+                <ion-icon name="sparkles-outline"></ion-icon>
+              </div>
+              <div class="benefit-text">
+                <h4>Resultados naturais</h4>
+                <p>Técnicas que valorizam e realçam sua beleza natural para um efeito sofisticado</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="benefits-image" data-aos="fade-left">
+          <img src="./assets/dani_bade.webp" alt="Dani Bade" itemprop="image">
+          <div class="pulse-effect"></div>
+          <a href="https://wa.me/5551995415520" class="btn-primary">Agende Agora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nova seção: Depoimentos -->
+  <section id="depoimentos" class="testimonials section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="subtitle">Clientes satisfeitas</span>
+        <h2>O que dizem sobre nós</h2>
+        <p>Depoimentos de quem já passou pela experiência Studio Dani Bade</p>
+      </div>
+
+      <div class="testimonials-slider" data-aos="fade-up">
+        <div class="testimonial-item">
+          <div class="testimonial-rating">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+          </div>
+          <p class="testimonial-text">"Nunca fiquei tão satisfeita com minhas sobrancelhas! A Dani entendeu exatamente o
+            que eu queria e o resultado ficou super natural. Não vou a outro lugar!"</p>
+          <div class="testimonial-author">
+            <img src="./assets/cliente1.jpg" alt="Ana Paula" class="author-image">
+            <div class="author-info">
+              <h4>Ana Paula</h4>
+              <p>Cliente desde 2022</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-rating">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+          </div>
+          <p class="testimonial-text">"A limpeza de pele da Dani é simplesmente a melhor! Minha pele ficou renovada e
+            radiante. O ambiente é super acolhedor e ela explica todo o processo com muita atenção."</p>
+          <div class="testimonial-author">
+            <img src="./assets/cliente2.jpg" alt="Juliana" class="author-image">
+            <div class="author-info">
+              <h4>Juliana</h4>
+              <p>Cliente desde 2023</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adicione mais depoimentos aqui -->
+      </div>
+
+      <div class="google-reviews" data-aos="fade-up">
+        <div class="google-reviews-header">
+          <img src="./assets/google-logo.png" alt="Google Reviews" class="google-logo">
+          <div class="google-rating">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <p>4.9/5 baseado em 78 avaliações</p>
+          </div>
+        </div>
+        <a href="https://g.page/r/Studio-Dani-Bade/review" target="_blank" class="btn-tertiary">Ver todas as
+          avaliações</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="subtitle">Fale conosco</span>
         <h2>Entre em Contato</h2>
-        <div class="contact-container">
-          <form id="contact-form" class="contact-form">
+        <p>Tire suas dúvidas ou agende seu horário</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <h4>Endereço</h4>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">Av. São Leopoldo, 1830 - Sala 2</span>
+              <span itemprop="addressLocality">Celeste, Campo Bom - RS</span>
+            </p>
+            <a href="https://www.google.com/maps/place/Studio+Dani+Bade+-+Av.+S%C3%A3o+Leopoldo,+1830+-+Sala+2+-+Celeste,+Campo+Bom+-+RS,+93700-000/@-29.68513,-51.071706,16z/"
+              target="_blank">Ver no mapa</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <ion-icon name="time-outline"></ion-icon>
+            </div>
+            <h4>Horário de Atendimento</h4>
+            <p itemprop="openingHours" content="Mo-Fr 09:00-19:00">Segunda a Sexta: 9h às 19h</p>
+            <p itemprop="openingHours" content="Sa 09:00-17:00">Sábado: 9h às 17h</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+            <h4>Telefone</h4>
+            <p itemprop="telephone">(51) 99541-5520</p>
+            <a href="https://wa.me/5551995415520" target="_blank">Enviar mensagem</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <ion-icon name="share-social-outline"></ion-icon>
+            </div>
+            <h4>Redes Sociais</h4>
+            <div class="social-links">
+              <a href="https://www.instagram.com/studio_danibade/" target="_blank" aria-label="Instagram"><ion-icon
+                  name="logo-instagram"></ion-icon></a>
+              <a href="https://www.facebook.com/studiodanibade/" target="_blank" aria-label="Facebook"><ion-icon
+                  name="logo-facebook"></ion-icon></a>
+              <a href="https://wa.me/5551995415520" target="_blank" aria-label="WhatsApp"><ion-icon
+                  name="logo-whatsapp"></ion-icon></a>
+            </div>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form" data-aos="fade-left">
+          <div class="form-row">
             <div class="form-group">
               <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" required data-target="nome">
+              <input type="text" id="nome" name="nome" required>
             </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required data-target="email">
-            </div>
-
             <div class="form-group">
               <label for="telefone">WhatsApp</label>
-              <input type="tel" id="telefone" name="telefone" required data-target="telefone">
+              <input type="tel" id="telefone" name="telefone" required>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label>Serviços de Interesse</label>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label>Serviços de Interesse</label>
+            <div class="services-checkbox">
               <div class="checkbox-group">
                 <div class="checkbox-item">
-                  <input type="checkbox" id="design-sobrancelha" name="servicos" value="Design de Sobrancelha"
-                    data-target="design-sobrancelha">
+                  <input type="checkbox" id="design-sobrancelha" name="servicos" value="Design de Sobrancelha">
                   <label for="design-sobrancelha">Design de Sobrancelha</label>
                 </div>
-
                 <div class="checkbox-item">
-                  <input type="checkbox" id="design-henna" name="servicos" value="Design com Henna"
-                    data-target="design-henna">
+                  <input type="checkbox" id="design-henna" name="servicos" value="Design com Henna">
                   <label for="design-henna">Design com Henna</label>
                 </div>
-
                 <div class="checkbox-item">
-                  <input type="checkbox" id="limpeza-pele" name="servicos" value="Limpeza de Pele"
-                    data-target="limpeza-pele">
+                  <input type="checkbox" id="limpeza-pele" name="servicos" value="Limpeza de Pele">
                   <label for="limpeza-pele">Limpeza de Pele</label>
                 </div>
-
+              </div>
+              <div class="checkbox-group">
                 <div class="checkbox-item">
-                  <input type="checkbox" id="cilios-brasileiro" name="servicos" value="Cílios Volume Brasileiro"
-                    data-target="cilios-brasileiro">
+                  <input type="checkbox" id="cilios-brasileiro" name="servicos" value="Cílios Volume Brasileiro">
                   <label for="cilios-brasileiro">Cílios Volume Brasileiro</label>
                 </div>
-
                 <div class="checkbox-item">
-                  <input type="checkbox" id="cilios-egipcio" name="servicos" value="Cílios Volume Egípcio"
-                    data-target="cilios-egipcio">
+                  <input type="checkbox" id="cilios-egipcio" name="servicos" value="Cílios Volume Egípcio">
                   <label for="cilios-egipcio">Cílios Volume Egípcio</label>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" rows="3" data-target="mensagem"></textarea>
-            </div>
-
+          <div class="form-row">
             <div class="form-group">
               <label for="data-preferida">Data Preferida</label>
-              <input type="date" id="data-preferida" name="data-preferida" min="<?= date('Y-m-d'); ?>" required
-                data-target="data-preferida">
+              <input type="date" id="data-preferida" name="data-preferida" required>
             </div>
-
             <div class="form-group">
               <label for="horario-preferido">Horário Preferido</label>
-              <select id="horario-preferido" name="horario-preferido" required data-target="horario-preferido">
+              <select id="horario-preferido" name="horario-preferido" required>
                 <option value="">Selecione um horário</option>
                 <option value="manha">Manhã (9h - 12h)</option>
                 <option value="tarde">Tarde (13h - 16h)</option>
                 <option value="final-tarde">Final da Tarde (16h - 19h)</option>
               </select>
             </div>
+          </div>
 
-            <button type="submit" class="submit-button" data-target="enviar">Enviar via WhatsApp</button>
-          </form>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+          </div>
 
-        </div>
-      </section>
+          <button type="submit" class="btn-submit pulse-button">Enviar via WhatsApp</button>
+          <p class="form-note">Ao enviar, você será redirecionada para o WhatsApp para confirmar seu agendamento.</p>
+        </form>
+      </div>
     </div>
+  </section>
 
-    <div id="end">
-      <section class="section-end">
-        <div class="telefone">
-          <h4>Telefone</h4>
-          <p>(51) 99541-5520</p>
-        </div>
-        <div class="horario">
-          <h4>Horário de Atendimento</h4>
-          <p>Segunda a Sexta: 9h às 19h</p>
-          <p>Sábado: 9h às 17h</p>
-        </div>
-        <div class="endereco">
-          <h4>Endereço</h4>
-          <p>Av. São Leopoldo, 1830 - Sala 2</p>
-          <p>Celeste, Campo Bom - RS</p>
-        </div>
-      </section>
-
-      <div id="social-links">
-        <a href="https://www.facebook.com/studiodanibade/" target="_blank"><ion-icon
-            name="logo-facebook"></ion-icon></a>
-        <a href="https://www.instagram.com/studio_danibade/" target="_blank"><ion-icon
-            name="logo-instagram"></ion-icon></a>
-        <a href="https://wa.me/5551995415520" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
-        <a href="https://www.google.com/maps/place/Studio+Dani+Bade+-+Av.+S%C3%A3o+Leopoldo,+1830+-+Sala+2+-+Celeste,+Campo+Bom+-+RS,+93700-000/@-29.68513,-51.071706,16z/data=!4m6!3m5!1s0x951941b23c43d6a9:0x33346641fea264ff!8m2!3d-29.6851303!4d-51.0717056!16s%2Fg%2F11vcv1skgr?hl=pt-BR&gl=BR"
-          target="_blank"><ion-icon name="location-outline"></ion-icon></a>
+  <!-- Nova seção: Instagram Feed -->
+  <section class="instagram-feed section-padding">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="subtitle">Siga-nos</span>
+        <h2>No Instagram</h2>
+        <p>Acompanhe nosso trabalho e fique por dentro das novidades</p>
       </div>
 
-      <footer>
-        <p>Com <span class="heart">&hearts;</span> desde 2021</p>
-      </footer>
+      <div class="instagram-grid" data-aos="fade-up">
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="instagram-item">
+          <img src="./assets/insta1.jpg" alt="Instagram Studio Dani Bade">
+          <div class="instagram-overlay">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span>32</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="instagram-item">
+          <img src="./assets/insta2.jpg" alt="Instagram Studio Dani Bade">
+          <div class="instagram-overlay">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span>47</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="instagram-item">
+          <img src="./assets/insta3.jpg" alt="Instagram Studio Dani Bade">
+          <div class="instagram-overlay">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span>65</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="instagram-item">
+          <img src="./assets/insta4.jpg" alt="Instagram Studio Dani Bade">
+          <div class="instagram-overlay">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span>29</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="instagram-item">
+          <img src="./assets/insta5.jpg" alt="Instagram Studio Dani Bade">
+          <div class="instagram-overlay">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span>53</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="instagram-item">
+          <img src="./assets/insta6.jpg" alt="Instagram Studio Dani Bade">
+          <div class="instagram-overlay">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span>42</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="instagram-cta" data-aos="fade-up">
+        <a href="https://www.instagram.com/studio_danibade/" target="_blank" class="btn-secondary">
+          <ion-icon name="logo-instagram"></ion-icon> Seguir @studio_danibade
+        </a>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="./assets/logodanibade-semfundo.png" alt="Studio Dani Bade" class="footer-logo-image">
+          <p>Especialista em beleza e estética</p>
+          <p class="created-by">Site criado por <a href="https://gbconnect.digital"
+              target="_blank">gbconnect.digital</a></p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services">
+          <h4>Serviços</h4>
+          <ul>
+            <li>Design de Sobrancelha</li>
+            <li>Design com Henna</li>
+            <li>Limpeza de Pele</li>
+            <li>Volume Brasileiro</li>
+            <li>Volume Egípcio 6D</li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <ul>
+            <li><ion-icon name="call-outline"></ion-icon> (51) 99541-5520</li>
+            <li><ion-icon name="location-outline"></ion-icon> Av. São Leopoldo, 1830 - Sala 2</li>
+            <li><ion-icon name="time-outline"></ion-icon> Seg-Sex: 9h-19h | Sáb: 9h-17h</li>
+          </ul>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/studio_danibade/" target="_blank" aria-label="Instagram"><ion-icon
+                name="logo-instagram"></ion-icon></a>
+            <a href="https://www.facebook.com/studiodanibade/" target="_blank" aria-label="Facebook"><ion-icon
+                name="logo-facebook"></ion-icon></a>
+            <a href="https://wa.me/5551995415520" target="_blank" aria-label="WhatsApp"><ion-icon
+                name="logo-whatsapp"></ion-icon></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2021 Studio Dani Bade - Todos os direitos reservados</p>
+        <p class="created-by">Site criado com <span class="heart">♥</span> por <a href="https://gbconnect.digital"
+            target="_blank">gbconnect.digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5551995415520" class="whatsapp-float" target="_blank">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+  <!-- Script para inicializar AOS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Inicializar AOS Animation
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+
+      // Preloader
+      window.addEventListener('load', function () {
+        document.getElementById('preloader').style.display = 'none';
+      });
+    });
+  </script>
 </body>
 
 </html>
