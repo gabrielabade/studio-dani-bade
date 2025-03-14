@@ -32,7 +32,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  /* 1rem = 10px */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -42,6 +44,9 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   background-color: var(--background-color);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -1688,6 +1693,7 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
+
   .hero-content h1 {
     font-size: 4.5rem;
   }

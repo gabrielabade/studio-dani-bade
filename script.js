@@ -7,6 +7,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.nav-link, .nav-menu a');
   const backToTopButton = document.getElementById('backToTop');
 
+  // Função para corrigir scroll horizontal
+  function fixHorizontalScroll() {
+    const viewportWidth = window.innerWidth;
+    const bodyWidth = document.body.offsetWidth;
+
+    // Se o body for maior que a viewport, ajustar
+    if (bodyWidth > viewportWidth) {
+      document.body.style.overflowX = 'hidden';
+      document.documentElement.style.overflowX = 'hidden';
+      document.body.style.width = '100%';
+    }
+
+    // Verificar elementos que podem causar overflow
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(element => {
+      const elementWidth = element.offsetWidth;
+      if (elementWidth > viewportWidth) {
+        element.style.maxWidth = '100%';
+        // Se for uma imagem ou vídeo, manter a proporção
+        if (element.tagName === 'IMG' || element.tagName === 'VIDEO') {
+          element.style.height = 'auto';
+        }
+      }
+    });
+  }
+
+  // Chamar a função quando a página carregar e quando redimensionar
+  window.addEventListener('load', fixHorizontalScroll);
+  window.addEventListener('resize', fixHorizontalScroll);
+
   // Inicialização do preloader
   window.addEventListener('load', function () {
     const preloader = document.getElementById('preloader');
@@ -32,8 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
       // Evitar scroll quando o menu está aberto
       if (isExpanded) {
         document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.width = '100%';
       } else {
         document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
       }
     });
 
@@ -142,13 +175,15 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Eventos de mouse
-    sliderHandle.addEventListener('mousedown', () => {
+    sliderHandle.addEventListener('mousedown', (e) => {
       isDragging = true;
+      e.preventDefault();
     });
 
     document.addEventListener('mousemove', (e) => {
       if (isDragging) {
         updateSliderPosition(e.clientX);
+        e.preventDefault();
       }
     });
 
@@ -157,15 +192,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Eventos de toque
-    sliderHandle.addEventListener('touchstart', () => {
+    sliderHandle.addEventListener('touchstart', (e) => {
       isDragging = true;
-    });
+      // Prevenir comportamento padrão de deslizamento
+      e.preventDefault();
+    }, { passive: false });
 
     document.addEventListener('touchmove', (e) => {
       if (isDragging) {
         updateSliderPosition(e.touches[0].clientX);
+        // Prevenir comportamento padrão de deslizamento da página
+        e.preventDefault();
       }
-    });
+    }, { passive: false });
 
     document.addEventListener('touchend', () => {
       isDragging = false;
