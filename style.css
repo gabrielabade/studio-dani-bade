@@ -535,6 +535,7 @@ img {
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
+  color: var(--primary-light);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(212, 169, 167, 0.5);
 }
