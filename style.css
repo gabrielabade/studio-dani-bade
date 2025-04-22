@@ -1993,3 +1993,83 @@ footer {
   content: "Depois";
   right: 20px;
 }
+
+/* WhatsApp Float Button - Versão completamente redonda */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--accent-color);
+  color: var(--light-text);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  /* Isso faz o botão ficar completamente redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Centraliza o ícone */
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  z-index: 100;
+  transition: var(--transition);
+  padding: 0;
+  /* Remove o padding para manter a forma circular perfeita */
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-float ion-icon {
+  font-size: 3rem;
+  /* Ícone maior */
+  margin: 0;
+  /* Remove margens para centralização perfeita */
+}
+
+/* Esconde o texto para ter apenas o ícone */
+.whatsapp-float span {
+  display: none;
+}
+
+/* Adicionar texto flutuante ao passar o mouse */
+.whatsapp-float::before {
+  content: "Fale conosco";
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.whatsapp-float:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Seta para o tooltip */
+.whatsapp-float::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
